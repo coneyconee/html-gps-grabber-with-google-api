@@ -9,21 +9,20 @@
 </html>
 <script>
   document.getElementById("getLocationButton").addEventListener("click", function() {
-    // Make an API request to retrieve location data
     navigator.geolocation.getCurrentPosition(function(position) {
       var latitude = position.coords.latitude;
       var longitude = position.coords.longitude;
-      var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=AIzaSyD39J79SILir16aYY5cqnOlt0LvefOEciM';
+      var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + 'API KEY';
 
-      // Perform the API request
+
       fetch(url)
         .then(function(response) {
           return response.json();
         })
         .then(function(data) {
-          // Handle the retrieved location data
+
           console.log(data);
-          // You can further process the data or display it on the page as needed
+          
         })
         .catch(function(error) {
           console.log('Error:', error);
